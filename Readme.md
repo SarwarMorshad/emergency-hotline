@@ -38,8 +38,6 @@
 
 ## 5. What is the difference between preventDefault() and stopPropagation() methods?
 
-## Difference between `preventDefault()` and `stopPropagation()`
-
 | Method                  | Purpose                                                                | Example Use Case                                                              |
 | ----------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | **`preventDefault()`**  | Stops the **browser’s default behavior** for an event.                 | Prevent a form from submitting or a link from navigating.                     |
