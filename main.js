@@ -81,11 +81,9 @@ function addHistory(serviceName, serviceNumber) {
                 </div>
 `;
   historyList.insertBefore(li, historyList.firstChild);
-  //   emptyHistory.style.display = "none";
 }
 
 // Clear History
 document.getElementById("clearHistory").addEventListener("click", function () {
   historyList.innerHTML = "";
-  //   emptyHistory.style.display = "block";
 });
