@@ -1,24 +1,13 @@
 ## 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 
-- **getElementById("id")**
+## 1. Difference between `getElementById`, `getElementsByClassName`, and `querySelector` / `querySelectorAll`
 
-  - Finds **one element** by its `id`.
-  - Returns a **single element** (or `null` if not found).
-
-- **getElementsByClassName("class")**
-
-  - Finds **all elements** with a given class name.
-  - Returns an **HTMLCollection** (looks like an array, but not exactly).
-  - Needs looping to access individual elements.
-
-- **querySelector("selector")**
-
-  - Finds the **first element** that matches a **CSS selector**.
-
-- **querySelectorAll("selector")**
-  - Finds **all elements** matching a CSS selector.
-
----
+| Method                                | What it Finds                                     | Return Type            | Notes                                                                |
+| ------------------------------------- | ------------------------------------------------- | ---------------------- | -------------------------------------------------------------------- |
+| **`getElementById("id")`**            | One element by its **id**                         | Single Element or null | Fastest way to grab by ID. IDs must be unique.                       |
+| **`getElementsByClassName("class")`** | All elements with a given **class name**          | HTMLCollection         | Looks like an array, but not exactly. Needs loop to access elements. |
+| **`querySelector("selector")`**       | The **first element** that matches a CSS selector | Single Element or null | Flexible: can use any CSS selector (`#id`, `.class`, `div > span`).  |
+| **`querySelectorAll("selector")`**    | **All elements** that match a CSS selector        | NodeList               | Similar to array. Supports `for...of` and `.forEach()`.              |
 
 ## 2. How do you create and insert a new element into the DOM?
 
@@ -38,7 +27,7 @@
 
 ## 5. What is the difference between preventDefault() and stopPropagation() methods?
 
-| Method                  | Purpose                                                                | Example Use Case                                                              |
-| ----------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| **`preventDefault()`**  | Stops the **browser’s default behavior** for an event.                 | Prevent a form from submitting or a link from navigating.                     |
-| **`stopPropagation()`** | Stops the event from **bubbling up** (or capturing down) the DOM tree. | Prevent a child button’s click from also triggering its parent’s click event. |
+| Method                | Purpose                                                                | Example Use Case                                                              |
+| --------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| **preventDefault()**  | Stops the **browser’s default behavior** for an event.                 | Prevent a form from submitting or a link from navigating.                     |
+| **stopPropagation()** | Stops the event from **bubbling up** (or capturing down) the DOM tree. | Prevent a child button’s click from also triggering its parent’s click event. |
