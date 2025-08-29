@@ -28,5 +28,28 @@ for (const card of cards) {
 
     copies += 1;
     copyCount.innerText = copies;
+
+    alert("Copied: " + serviceNumber);
+  });
+}
+
+// Call Number
+for (const card of cards) {
+  const callBtn = card.querySelector(".call");
+  const serviceName = card.querySelector("h4").textContent;
+  const serviceNumber = card.querySelector(".number").textContent;
+
+  callBtn.addEventListener("click", function () {
+    if (coins < 20) {
+      alert("Not enough coins to make a call. You need at least 20 coins.");
+      return;
+    }
+
+    coins -= 20;
+    if (coins < 0) {
+      coins = 0;
+    }
+    coinCount.innerText = coins;
+    alert("Calling: " + serviceName + " at " + serviceNumber);
   });
 }
