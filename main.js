@@ -50,6 +50,42 @@ for (const card of cards) {
       coins = 0;
     }
     coinCount.innerText = coins;
-    alert("Calling: " + serviceName + " at " + serviceNumber);
+    alert(`Calling ${serviceName} at ${serviceNumber}`);
+
+    addHistory(serviceName, serviceNumber);
   });
 }
+
+const historyList = document.getElementById("historyList");
+const emptyHistory = document.getElementById("emptyHistory");
+
+function addHistory(serviceName, serviceNumber) {
+  const now = new Date();
+  const time = now.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+  });
+
+  const li = document.createElement("li");
+  li.className = "flex justify-between p-2 mb-3 shadow-md rounded-md bg-[rgba(250,250,250,1)]";
+
+  li.innerHTML = `
+                <div>
+                    <strong>${serviceName}</strong><br>
+                    <small>${serviceNumber}</small>
+                </div>
+                <div>
+                    <small>${time}</small>
+                </div>
+`;
+  historyList.insertBefore(li, historyList.firstChild);
+  //   emptyHistory.style.display = "none";
+}
+
+// Clear History
+document.getElementById("clearHistory").addEventListener("click", function () {
+  historyList.innerHTML = "";
+  //   emptyHistory.style.display = "block";
+});
